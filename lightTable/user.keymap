@@ -22,11 +22,13 @@
  [:editor "ctrl--" :comment-selection]
  [:editor "ctrl-shift--" :uncomment-selection]
  [:window "ctrl-0" :window.zoom-reset]
- [:tabs "ctrl-shift-left" :tabs.prev]
- [:tabs "ctrl-shift-right" :tabs.next]
+ [:tabs "ctrl-left" :tabs.prev]
+ [:tabs "ctrl-right" :tabs.next]
  [:tabs "pmeta-1" (:tabs.goto 0)]
  [:window "ctrl-w" :console-tab]
  [:editor "ctrl-b" :editor.open-current-file-in-browser]
+ [:app "ctrl-q" :workspace.show]
+ [:editor "ctrl-g" :gitlight-status-toggle] ;; needs gitLight plugin
 
  ;; To subtract a keybinding, prefix the key with '-'  e.g.
  ;;  [:app "-ctrl-shift-d" :docs.search.show]

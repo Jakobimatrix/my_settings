@@ -20,6 +20,7 @@
 [
  ;; The app tag is kind of like global scope. You assign behaviors that affect
  ;; all of Light Table to it.
+ [:app :-lt.objs.intro/show-intro] ;; stop showing welcom tab at start
  [:app :lt.objs.style/set-skin "dark"]
  [:app :lt.objs.plugins/load-js "user_compiled.js"]
 
@@ -51,6 +52,12 @@
 
  ;; Tab settings: Use real tabs, tab size in spaces, spaces per indent
  [:editor :lt.objs.editor/tab-settings false 2 2]
+
+ [:app :lt.plugins.gitlight/config {:git-binary "git" :max-history 64}] ;; needs gitLight Plugin
+
+ [:app :lt.objs.app/run-on-init :window.maximize]
+ [:app :-lt.objs.app/restore-position-on-init] ;; otherwize the windows.maximize will be overwritten by stored value which seems to be wrong since it never opens maximized even if i closed it that way.
+
 
 ]
 
